@@ -1,8 +1,18 @@
 export class Board {
     constructor(){
         this._board = new Array(42).fill().map(cell => new Cell());
+        for (let row = 0; row < 6; row++){
+            for (let col = 0; col < 7; col++){
+                this._board[col + (row * 7)] = new Cell(col, row)
+            }
+        }
     }
 
+    getCell(col, row){
+        return this._board[col + (row * 7)];
+    }
+
+    // Return the cell where token was inserted
     insertToken(columnNumber, playerObject){
         if(columnNumber < 0 || columnNumber > 6){
             throw new RangeError("Column number out of range");
@@ -15,18 +25,21 @@ export class Board {
                 continue;
             } else {
                 cell.setPlayer(playerObject);
-                return;
+                return cell;
             }
         }
 
         throw new Error("Column full")
     }
+
+    
 }
 
 class Cell {
-    constructor(){
+    constructor(col, row){
+        this.col = col;
+        this.row = row;
         this._player = null;
-        this._hasBeenChecked = false;
     }
 
     isEmpty(){
@@ -35,13 +48,5 @@ class Cell {
 
     setPlayer(playerObject){
         this._player = playerObject;
-    }
-
-    check(){
-        this._hasBeenChecked = true;
-    }
-
-    uncheck(){
-        this._hasBeenChecked = false;
     }
 }
