@@ -4,9 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="icon" type="png" href="/favicon.png" />
+  <link rel="stylesheet" href="/style.css">
+  <title>Connect four</title>
 </head>
 <body>
-  <p>Rules</p>
+  <div id="rules-container">
+    <section class="shadow-box" id="rules-box">
+      <h1>RULES</h1>
+      <section>
+        <h2>OBJECTIVE</h2>
+        <p>Be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally).</p>
+      </section>
+      <section>
+        <h2>HOW TO PLAY</h2>
+        <ol>
+          <li>Red goes first in the first game.</li>
+          <li>Players must alternate turns, and only one disc can be dropped in each turn.</li>
+          <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
+          <li>The starter of the previous game goes second on the next game.</li>
+        </ol>
+      </section>
+      <a href="/index.html">
+        <button class="confirm-button">
+          <img src="/assets/confirm.svg" alt="">
+        </button>
+      </a>
+    </section>
+  </div>
 </body>
 </html>

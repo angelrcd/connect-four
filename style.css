@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -31,11 +32,14 @@ p, h1, h2, h3, h4, h5, h6 {
   --secondary-color: #5C2DD5;
   --border-color: #000000;
   --yellow-color: #FFCE67;
+  --text-color: #595959;
 }
 
 body {
   background-color: var(--main-color);
+  font-family: 'Space Grotesk', sans-serif;
 }
+
 
 .shadow-box {
   border: 3px solid var(--border-color);
@@ -49,15 +53,18 @@ a, a:visited, a:focus {
 }
 
 /* Main menu */
-#main-menu-container {
-  height: 90vh;
+#main-menu-container,
+#rules-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#main-menu-box {
-  min-width: 380px;
+#main-menu-box,
+#rules-box {
+  min-width: 400px;
+  max-width: 450px;
+  margin-top: 4rem;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -85,6 +92,7 @@ a, a:visited, a:focus {
 
 .pill-button.shadow-box:hover {
   cursor: pointer;
+  transform: scale(1.05);
   box-shadow: 0px 0.7rem 0px var(--secondary-color);
 }
 
@@ -92,4 +100,47 @@ a, a:visited, a:focus {
   background-color: var(--yellow-color);
 }
 
+/* RULES */
+#rules-box {
+  background: white;
+  gap: 2rem;
+  position: relative;
+}
 
+#rules-box h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+#rules-box h2 {
+  color: var(--main-color);
+  margin-bottom: 0.8rem;
+}
+
+#rules-box p,
+#rules-box li {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+#rules-box ::marker {
+  color: var(--border-color);
+}
+
+#rules-box a {
+  width: fit-content;
+  border-radius: 100%;
+  position: absolute;
+  top: 95%;
+}
+
+.confirm-button {
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  transform: scale(1.05);
+}
