@@ -31,6 +31,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --main-color: #7945FF;
   --secondary-color: #5C2DD5;
   --border-color: #000000;
+  --pink-color: #FD6687;
   --yellow-color: #FFCE67;
   --text-color: #595959;
 }
@@ -62,9 +63,8 @@ a, a:visited, a:focus {
 
 #main-menu-box,
 #rules-box {
-  min-width: 400px;
-  max-width: 450px;
-  margin-top: 4rem;
+  width: clamp(300px, 90vw,450px);
+  margin: 4rem 10px;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -143,4 +143,115 @@ a, a:visited, a:focus {
 
 .confirm-button:hover {
   transform: scale(1.05);
+}
+
+@media (width <= 360px) {
+  #main-menu-box.shadow-box {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #main-menu-box {
+    padding: 4rem 0.3rem;
+  }
+}
+
+/* GAME PAGE */
+#game-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#game-buttons button {
+  width: fit-content;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  background-color: var(--secondary-color);
+}
+
+#game-buttons button:hover {
+  cursor: pointer;
+  background-color: var(--pink-color);
+}
+
+#players-score-section {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-box {
+  position: relative;
+  padding: 0.6rem 2rem;
+  background: white;
+}
+
+.player-box .score {
+  text-align: center;
+  display: block;
+  font-size: 2rem;
+}
+
+.player-box img {
+  position: absolute;
+}
+
+.player-one img {
+  top: 25%;
+  left: -20%;
+}
+
+.player-two img {
+  top: 25%;
+  right: -20%;
+}
+
+@media (width <= 400px) {
+  .player-one img {
+    top: 75%;
+    left: 0;
+  }
+  
+  .player-two img {
+    top: 75%;
+    right: 0;
+  }
+}
+
+#board-section {
+  margin-top: 4rem;
+}
+
+#board {
+  background: white;
+  max-width: 600px;
+  padding: 5px 5px 1rem;
+  margin: 0 10px;
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns with equal width */
+  grid-template-rows: repeat(6, minmax(0, 1fr)); /* 6 rows with equal height */
+  gap: 5px; /* Adjust the gap between cells as needed */
+}
+
+@media (width >= 620px) {
+  #board {
+    margin: 0 auto;
+  }
+}
+
+.cell {
+  /* The aspect ratio trick: */
+  position: relative;
+  padding-bottom: calc(100% - 6px); /* 1:1 aspect ratio, minus 6px due to the border */
+  border: 3px solid black;
+  border-radius: 100%;
+  background-color: var(--main-color); /* Add your preferred cell styling here */
+  box-shadow: inset 0px 0.6rem 0px var(--border-color);
 }

@@ -4,9 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="png" href="/favicon.png" />
+  <link rel="stylesheet" href="/style.css">
   <title>Document</title>
 </head>
 <body>
-  <p>game</p>
+  <nav id="game-buttons">
+    <button>MENU</button>
+    <img src="/assets/logo.svg" alt="">
+    <button>RESTART</button>
+  </nav>
+  <section id="players-score-section">
+    <div class="player-box player-one shadow-box">
+      <p>PLAYER 1</p>
+      <span class="score" id="player-one-score">0</span>
+      <img src="/assets/player1icon.svg" alt="">
+    </div>
+    <div class="player-box player-two shadow-box">
+      <p>PLAYER 2</p>
+      <span class="score" id="player-two-score">0</span>
+      <img src="/assets/player2icon.svg" alt="">
+    </div>
+  </section>
+  <section id="board-section">
+    <div class="shadow-box" id="board"></div>
+  </section>
+
+  <script src="/scripts/drawBoard.js"></script>
 </body>
 </html>
