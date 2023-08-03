@@ -52,7 +52,14 @@ cells.forEach(cell => {
   })
 })
 
-restartGameButton.addEventListener("click", restartGame)
+restartGameButton.addEventListener("click", ()=> {
+  if (!isBoardClickable){
+    restartGame();
+    swapTurnVictoryIndicator();
+  } else {
+    restartGame();
+  }
+})
 nextRoundButton.addEventListener("click", ()=> {
   restartGame();
   swapTurnVictoryIndicator();
