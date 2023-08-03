@@ -147,7 +147,7 @@ function hasContinuousFourValues(cellArr) {
     });
   
       if (allEqual) {
-        return true;
+        return subArray;
       }
     }
   

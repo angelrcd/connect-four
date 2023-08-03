@@ -32,7 +32,9 @@ p, h1, h2, h3, h4, h5, h6 {
   --secondary-color: #5C2DD5;
   --border-color: #000000;
   --pink-color: #FD6687;
+  --pink-dark-color: #7F3344;
   --yellow-color: #FFCE67;
+  --yellow-dark-color: #806733;
   --text-color: #595959;
 }
 
@@ -46,6 +48,10 @@ body {
   border: 3px solid var(--border-color);
   border-radius: 2rem;
   box-shadow: 0px 0.7rem 0px var(--border-color);
+}
+
+.hidden {
+  display: none;
 }
 
 a, a:visited, a:focus {
@@ -196,6 +202,7 @@ a, a:visited, a:focus {
   text-align: center;
   display: block;
   font-size: 2rem;
+  font-weight: 600;
 }
 
 .player-box img {
@@ -232,7 +239,7 @@ a, a:visited, a:focus {
   background: white;
   max-width: 600px;
   padding: 5px 5px 1rem;
-  margin: 0 10px;
+  margin: 0 3vw;
   border-radius: 1.5rem;
   display: grid;
   grid-template-columns: repeat(7, 1fr); /* 7 columns with equal width */
@@ -253,5 +260,72 @@ a, a:visited, a:focus {
   border: 3px solid black;
   border-radius: 100%;
   background-color: var(--main-color); /* Add your preferred cell styling here */
-  box-shadow: inset 0px 0.6rem 0px var(--border-color);
+  box-shadow: inset 0px 0.4rem 0px var(--border-color);
+}
+
+.cell:hover {
+  cursor: pointer;
+}
+
+.cell[data-player='1'] {
+  background-color: var(--pink-color);
+  box-shadow: inset 0px 0.3rem 0px var(--pink-dark-color);
+}
+
+.cell[data-player='2'] {
+  background-color: var(--yellow-color);
+  box-shadow: inset 0px 0.3rem 0px var(--yellow-dark-color);
+}
+
+.cell.victory::before {
+  content:'';
+  display:block;
+  border:1px solid #000;
+  border-radius: 100%;
+  position: absolute;
+  width:50%;
+  height:50%;
+  margin:5px auto;
+  background-color:#DDD;
+}
+
+#turn-indicator,
+#winner-indicator {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  position: relative;
+  top: -13px;
+  z-index: 12;
+}
+
+#turn-indicator[data-player='1'] {
+  background-color: var(--pink-color);
+}
+
+#turn-indicator[data-player='2'] {
+  background-color: var(--yellow-color);
+}
+
+#winner-indicator {
+  background-color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+#winner-indicator span {
+  font-size: 2rem;
+}
+
+#next-round-btn {
+  color: white;
+  font-size: 1.1rem;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+
+#next-round-btn:hover {
+  background-color: var(--pink-color);
 }

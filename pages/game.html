@@ -12,24 +12,33 @@
   <nav id="game-buttons">
     <button>MENU</button>
     <img src="/assets/logo.svg" alt="">
-    <button>RESTART</button>
+    <button id="restart-btn">RESTART</button>
   </nav>
   <section id="players-score-section">
     <div class="player-box player-one shadow-box">
       <p>PLAYER 1</p>
-      <span class="score" id="player-one-score">0</span>
+      <span class="score" id="player-one-score"></span>
       <img src="/assets/player1icon.svg" alt="">
     </div>
     <div class="player-box player-two shadow-box">
       <p>PLAYER 2</p>
-      <span class="score" id="player-two-score">0</span>
+      <span class="score" id="player-two-score"></span>
       <img src="/assets/player2icon.svg" alt="">
     </div>
   </section>
   <section id="board-section">
     <div class="shadow-box" id="board"></div>
   </section>
-
-  <script src="/scripts/drawBoard.js"></script>
+  <section>
+    <div class="shadow-box" id="turn-indicator">
+      <p>Player <span id="current-player-id"></span> turn</p>
+    </div>
+    <div class="shadow-box hidden" id="winner-indicator">
+      <p></p>
+      <span>WINS</span>
+      <button class="pill-button" id="next-round-btn">PLAY AGAIN</button>
+    </div>
+  </section>
+  <script type="module" src="/main.js"></script>
 </body>
 </html>
