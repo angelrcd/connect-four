@@ -24,6 +24,10 @@ newGameButton.addEventListener("click", () => {
   player2._score = 0;
   const menuModal = document.querySelector("#menu-modal")
   
+  if (!isBoardClickable) {
+    swapTurnVictoryIndicator();
+  }
+  
   updateScoreDisplay(player1, player2)
   restartGame();
   redrawBoard();
