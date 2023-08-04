@@ -7,6 +7,7 @@ drawBoard();
 
 const cells = document.querySelectorAll(".cell");
 const restartGameButton = document.querySelector("#restart-btn");
+const newGameButton = document.querySelector("#menu-new");
 const nextRoundButton = document.querySelector("#next-round-btn");
 
 let board = new Board();
@@ -17,6 +18,17 @@ let isBoardClickable = true;
 
 updateScoreDisplay(player1, player2);
 updateTurnIndicator(currentTurn);
+
+newGameButton.addEventListener("click", () => {
+  player1._score = 0;
+  player2._score = 0;
+  const menuModal = document.querySelector("#menu-modal")
+  
+  updateScoreDisplay(player1, player2)
+  restartGame();
+  redrawBoard();
+  menuModal.close();
+})
 
 cells.forEach(cell => {
   cell.addEventListener("click", ()=>{

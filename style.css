@@ -98,7 +98,7 @@ a, a:visited, a:focus {
 
 .pill-button.shadow-box:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0px 0.7rem 0px var(--secondary-color);
 }
 
@@ -281,13 +281,6 @@ a, a:visited, a:focus {
   background: radial-gradient(#FFCE67 20%, white 20%, white 40%, #FFCE67 40%);
 }
 
-/* .cell.victory::before {
-  transform: scale(0.3);
-  content:url(/assets/circle.svg);
-  display:block;
-  position: absolute;
-} */
-
 #turn-indicator,
 #winner-indicator {
   width: fit-content;
@@ -328,6 +321,39 @@ a, a:visited, a:focus {
 #next-round-btn:hover {
   background-color: var(--pink-color);
 }
+
+/* Menu */
+
+#menu-modal {
+  background-color: var(--main-color);
+  border-radius: 20px;
+  margin: 2rem auto;
+  padding: 3rem 3rem;
+  width: clamp(300px, 90vw,450px);
+}
+
+#menu-modal::backdrop {
+  background: linear-gradient(#000a, #000a);
+}
+
+#menu-modal p {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+#menu-modal button {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+#menu-quit {
+  background-color: var(--pink-color);
+  color: white;
+} 
 
 @media (width >= 620px) {
   #board {

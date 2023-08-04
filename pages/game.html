@@ -9,8 +9,17 @@
   <title>Document</title>
 </head>
 <body>
+  <dialog id="menu-modal">
+    <p>PAUSE</p>
+    <div class="button-group">
+      <button id="menu-continue" class="pill-button shadow-box">CONTINUE GAME</button>
+      <button id="menu-new" class="pill-button shadow-box">NEW GAME</button>
+      <a href="/index.html"><button id="menu-quit" class="pill-button shadow-box">QUIT GAME</button></a>
+    </div>
+  </dialog>
+
   <nav id="game-buttons">
-    <button>MENU</button>
+    <button id="open-menu">MENU</button>
     <img src="/assets/logo.svg" alt="">
     <button id="restart-btn">RESTART</button>
   </nav>
@@ -40,5 +49,6 @@
     </div>
   </section>
   <script type="module" src="/main.js"></script>
+  <script type="module" src="/scripts/menu.js"></script>
 </body>
 </html>
