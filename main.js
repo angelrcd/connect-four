@@ -1,7 +1,7 @@
-import { Board } from "/scripts/Board.js";
-import { Player } from "/scripts/Player.js";
-import drawBoard from "/scripts/drawBoard.js";
-import { updateScoreDisplay, updateTurnIndicator, swapTurnVictoryIndicator } from "/scripts/displayController.js";
+import { Board } from "./scripts/Board.js";
+import { Player } from "./scripts/Player.js";
+import drawBoard from "./scripts/drawBoard.js";
+import { updateScoreDisplay, updateTurnIndicator, swapTurnVictoryIndicator } from "./scripts/displayController.js";
 
 drawBoard();
 
